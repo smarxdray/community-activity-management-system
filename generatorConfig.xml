@@ -25,7 +25,7 @@
         <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
 
         <!-- 配置mapper对应的java映射 -->
-        <javaClientGenerator targetPackage="com.cams.mapper" targetProject="src/main/java"
+        <javaClientGenerator targetPackage="com.cams.dao.mapper" targetProject="src/main/java"
                              type="XMLMAPPER"/>
 
 
