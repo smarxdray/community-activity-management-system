@@ -10,9 +10,18 @@ CREATE TABLE IF NOT EXISTS `admin`(
 	`status` INT DEFAULT 0
 		COMMENT '-1：禁用账号
 				 0：普通权限',
-    `identity_card` CHAR(18),
-	`phone` VARCHAR(16),
-	`email` VARCHAR(32),
+	`role` INT UNSIGNED NOT NULL
+		COMMENT '1：管理员
+				 2：发起方
+				 3：导师
+				 4：居民',
+	`gender` TINYINT DEFAULT 0
+		COMMENT '0：未知
+				 1：男
+				 2：女',
+    `identity_card` CHAR(18) UNIQUE,
+	`phone` VARCHAR(16) UNIQUE,
+	`email` VARCHAR(32) UNIQUE,
 	`img_path` VARCHAR(128),
 	`salt` VARCHAR(64),
 	`password` VARCHAR(64) 	NOT NULL,
@@ -27,9 +36,18 @@ CREATE TABLE IF NOT EXISTS `sponsor`(
     `status` INT DEFAULT 0
 		COMMENT '-1：禁用账号
 				 0：普通权限',
-    `identity_card` CHAR(18),
-    `phone` VARCHAR(16),
-    `email` VARCHAR(32),
+	`role` INT UNSIGNED NOT NULL
+		COMMENT '1：管理员
+				 2：发起方
+				 3：导师
+				 4：居民',
+	`gender` TINYINT DEFAULT 0
+		COMMENT '0：未知
+				 1：男
+				 2：女',
+    `identity_card` CHAR(18) UNIQUE,
+    `phone` VARCHAR(16) UNIQUE,
+    `email` VARCHAR(32) UNIQUE,
     `intro` VARCHAR(128),
 	`img_path` VARCHAR(128),
 	`salt` VARCHAR(64),
@@ -41,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `sponsor`(
 
 CREATE TABLE IF NOT EXISTS `activity_type`(
 	`id` INT UNSIGNED AUTO_INCREMENT,
-    `name` VARCHAR(32) NOT NULL,
+    `name` VARCHAR(32) NOT NULL UNIQUE,
     `credit` INT UNSIGNED NOT NULL,
     `intro` VARCHAR(128),
 	`img_path` VARCHAR(128),
@@ -57,13 +75,18 @@ CREATE TABLE IF NOT EXISTS `resident`(
 		COMMENT '-1：禁用账号
 				 0：普通权限',
     `credit` INT UNSIGNED DEFAULT 0,
+    `role` INT UNSIGNED NOT NULL
+		COMMENT '1：管理员
+				 2：发起方
+				 3：导师
+				 4：居民',
     `gender` TINYINT DEFAULT 0
 		COMMENT '0：未知
 				 1：男
                  2：女',
-    `identity_card` CHAR(18),
-    `phone` CHAR(16),
-    `email` VARCHAR(32),
+    `identity_card` CHAR(18) UNIQUE,
+    `phone` CHAR(16) UNIQUE,
+    `email` VARCHAR(32) UNIQUE,
     `intro` VARCHAR(128),
 	`img_path` VARCHAR(128),
 	`salt` VARCHAR(64),
@@ -79,15 +102,20 @@ CREATE TABLE IF NOT EXISTS `coach`(
     `status` INT DEFAULT 0
 		COMMENT '-1：禁用账号
 				 0：普通权限',
+	`role` INT UNSIGNED NOT NULL
+		COMMENT '1：管理员
+				 2：发起方
+				 3：导师
+				 4：居民',
     `type` INT UNSIGNED,
     `credit` INT UNSIGNED DEFAULT 0,
     `gender` TINYINT DEFAULT 0
 		COMMENT '0：未知
 				 1：男
                  2：女',
-    `identity_card` CHAR(18),
-    `phone` CHAR(16),
-    `email` VARCHAR(32),
+    `identity_card` CHAR(18) UNIQUE,
+    `phone` CHAR(16) UNIQUE,
+    `email` VARCHAR(32) UNIQUE,
     `intro` VARCHAR(128),
 	`img_path` VARCHAR(128),
 	`salt` VARCHAR(64),
@@ -100,7 +128,7 @@ CREATE TABLE IF NOT EXISTS `coach`(
 
 CREATE TABLE IF NOT EXISTS `place`(
 	`id` INT UNSIGNED AUTO_INCREMENT,
-    `address` VARCHAR(64) NOT NULL,
+    `address` VARCHAR(64) NOT NULL UNIQUE,
     `intro` VARCHAR(128),
 	`img_path` VARCHAR(128),
 	`update_time` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
