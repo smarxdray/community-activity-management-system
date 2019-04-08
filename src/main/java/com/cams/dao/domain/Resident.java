@@ -4,6 +4,4 @@ import lombok.Data;
 
 @Data
 public class Resident {
-    Long id;
-    String name;
 }
