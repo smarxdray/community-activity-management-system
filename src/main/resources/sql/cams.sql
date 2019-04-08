@@ -7,7 +7,7 @@ USE `cams`;
 CREATE TABLE IF NOT EXISTS `admin`(
 	`id` INT UNSIGNED AUTO_INCREMENT,
 	`name` VARCHAR(32) NOT NULL,
-	`code` INT DEFAULT 0
+	`status` INT DEFAULT 0
 		COMMENT '-1：禁用账号
 				 0：普通权限',
 	`role` INT UNSIGNED NOT NULL
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `admin`(
 CREATE TABLE IF NOT EXISTS `sponsor`(
 	`id` INT UNSIGNED AUTO_INCREMENT,
     `name` VARCHAR(32) NOT NULL,
-    `code` INT DEFAULT 0
+    `status` INT DEFAULT 0
 		COMMENT '-1：禁用账号
 				 0：普通权限',
 	`role` INT UNSIGNED NOT NULL
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `activity_type`(
 CREATE TABLE IF NOT EXISTS `resident`(
 	`id` INT UNSIGNED AUTO_INCREMENT,
     `name` VARCHAR(32) NOT NULL,
-    `code` INT DEFAULT 0
+    `status` INT DEFAULT 0
 		COMMENT '-1：禁用账号
 				 0：普通权限',
     `credit` INT UNSIGNED DEFAULT 0,
@@ -99,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `resident`(
 CREATE TABLE IF NOT EXISTS `coach`(
 	`id` INT UNSIGNED AUTO_INCREMENT,
     `name` VARCHAR(32) NOT NULL,
-    `code` INT DEFAULT 0
+    `status` INT DEFAULT 0
 		COMMENT '-1：禁用账号
 				 0：普通权限',
 	`role` INT UNSIGNED NOT NULL
@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `place`(
 CREATE TABLE IF NOT EXISTS `activity`(
 	`id` INT UNSIGNED AUTO_INCREMENT,
     `name` VARCHAR(32) NOT NULL,
-    `code` INT DEFAULT 0
+    `status` INT DEFAULT 0
 		COMMENT '0：待审核
 				 1：审核未通过
                  2：审核通过
@@ -171,7 +171,7 @@ CREATE TABLE IF NOT EXISTS `activity_resident`(
 	`id` INT UNSIGNED AUTO_INCREMENT,
     `activity` INT UNSIGNED NOT NULL,
     `resident` INT UNSIGNED NOT NULL,
-    `code` INT DEFAULT 1
+    `status` INT DEFAULT 1
 		COMMENT '0：取消报名
 				 1：已报名
 				 11：已报名，已签到
