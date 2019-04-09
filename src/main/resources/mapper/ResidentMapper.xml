@@ -4,8 +4,8 @@
 <mapper namespace="com.cams.dao.mapper.ResidentMapper">
     <insert id="insertResident" parameterType="User" useGeneratedKeys="true" keyProperty="id">
         insert into resident
-        (name, role,gender, identity_card, phone, email, intro, img_path,salt, `password`)
+        (name, role,gender, openid, identity_card, phone, email, intro, img_path,salt, `password`)
         values
-        (#{name}, #{role},#{gender}, #{identityCard},#{phone}, #{email}, #{intro}, #{imgPath},#{salt}, #{password});
+        (#{name}, #{role},#{gender}, #{openid}, #{identityCard},#{phone}, #{email}, #{intro}, #{imgPath},#{salt}, #{password});
     </insert>
 </mapper>
