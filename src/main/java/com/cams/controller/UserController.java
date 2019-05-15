@@ -1,5 +1,6 @@
 package com.cams.controller;
 
+import com.cams.dao.domain.Plcae;
 import com.cams.dao.domain.User;
 import com.cams.dao.domain.WXSession;
 import com.cams.service.RedisHelper;
@@ -8,10 +9,9 @@ import com.cams.utils.HttpClient;
 import com.cams.utils.Response;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -50,10 +50,15 @@ public class UserController {
         return Response.ok(user);
     }
 
-    @PostMapping("")
-    public Response addUser(@RequestBody User user) {
-        User ret = userService.addUser(user);
-        if (ret == null) return Response.errorMsg("注册失败！");
-        else return Response.ok(ret);
+//    @PostMapping("")
+//    public Response addUser(@RequestBody User user) {
+//        User ret = userService.addUser(user);
+//        if (ret == null) return Response.errorMsg("注册失败！");
+//        else return Response.ok(ret);
+//    }
+
+
+
     }
-}
+
+

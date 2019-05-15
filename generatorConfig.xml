@@ -32,5 +32,6 @@
         <table tableName="sys_user"></table>
         <table tableName="sys_role"></table>
 
+
     </context>
 </generatorConfiguration>
