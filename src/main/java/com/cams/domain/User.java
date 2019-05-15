@@ -1,7 +1,6 @@
-package com.cams.dao.domain;
+package com.cams.domain;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.Data;
 
 import java.util.Date;
 

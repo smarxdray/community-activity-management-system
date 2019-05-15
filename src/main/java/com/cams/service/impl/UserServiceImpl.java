@@ -1,7 +1,7 @@
 package com.cams.service.impl;
 
-import com.cams.dao.domain.User;
-import com.cams.dao.mapper.ResidentMapper;
+import com.cams.domain.User;
+import com.cams.dao.ResidentMapper;
 import com.cams.service.UserService;
 import com.cams.utils.VALUE;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--namespace该是ResidentMapper的完整限定名-->
-<mapper namespace="com.cams.dao.mapper.ResidentMapper">
+<mapper namespace="com.cams.dao.ResidentMapper">
     <insert id="insertResident" parameterType="User" useGeneratedKeys="true" keyProperty="id">
         insert into resident
         (name, role,gender, openid, identity_card, phone, email, intro, img_path,salt, `password`)

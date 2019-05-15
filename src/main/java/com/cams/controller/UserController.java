@@ -1,7 +1,7 @@
 package com.cams.controller;
 
-import com.cams.dao.domain.User;
-import com.cams.dao.domain.WXSession;
+import com.cams.domain.User;
+import com.cams.domain.WXSession;
 import com.cams.service.RedisHelper;
 import com.cams.service.UserService;
 import com.cams.utils.HttpClient;

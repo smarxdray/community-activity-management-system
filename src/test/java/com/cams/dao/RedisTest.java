@@ -1,7 +1,7 @@
 package com.cams.dao;
 
 import com.cams.BaseTest;
-import com.cams.dao.domain.User;
+import com.cams.domain.User;
 import com.cams.service.impl.RedisHelperImpl;
 import org.junit.Ignore;
 import org.junit.Test;

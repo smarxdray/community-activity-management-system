@@ -1,4 +1,4 @@
-package com.cams.dao.domain;
+package com.cams.domain;
 
 public class WXSession {
     private String session_key;
