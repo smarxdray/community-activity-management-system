@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Date;
 
-
+@Data
 public class User {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Integer id;
